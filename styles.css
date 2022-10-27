@@ -62,20 +62,41 @@ nav {
   background-color: var(--skills-title-active);
 }
 
-header > nav > ul {
+.navLists {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   list-style: none;
-  gap: 2em;
+  gap: 4em;
   padding-right: 1em;
 }
 
-header > nav > ul > li > a {
+.navLink {
   text-decoration: none;
 }
 
-header > nav > ul > li > a:visited {
+.navList {
+  position: relative;
+  
+}
+
+.navList:before {
+  content: "";
+  position: absolute;
+  left: 1em;
+  bottom: 0.3em;
+  width: 90%;
+  height: 0.5em;
+  transform: skew(-12deg) translateX(-50%);
+  background: var(--skills-box);
+  z-index: -1;
+}
+
+.navList:hover, .navList:focus {
+  width: 90%;
+}
+
+.navLink:visited {
   color: var(--text-color);
 }
 
@@ -84,6 +105,10 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+article {
+  width:50%;
 }
 
 .sectionTitle {
@@ -107,7 +132,7 @@ main {
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
-  text-align: left;
+  text-align: center;
   width: 100%;
   outline: none;
   transition: 0.5s;
@@ -128,6 +153,10 @@ main {
   background-color: var(--skills-box);
   padding-top: 1.5em;
   width: 100%;
+}
+
+.skillTitle.is-open {
+  border-bottom: 1px solid var(--text-color);
 }
 
 .skillTitle.is-open,
