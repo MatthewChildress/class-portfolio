@@ -12,8 +12,11 @@
     <title>Childress Portfolio</title>
 </head>
 <body>
-    <header>
-        <div class="myName">Matthew Childress</div>
+    <header class="navBar" id="navBar">
+        <div class="myLogo">
+            <img class="myImage" src="./assets/logo.png" alt="logo of man working at computer" />
+            <p class="myName">Matthew Childress</p>
+        </div>
         <nav>
             <ul class="navLists">
                 <li class="navList">
@@ -43,19 +46,22 @@
         </nav>
     </header>
     <main>
-        <section id="hero">
+        <section id="hero sections">
             <div class="heroWrapper">
-                <h3 class="sectionTitle">About Me</h3>
-                <div></div>
-                <article>
-                    <h2>Front End Developer</h2>
-                    <p>I'm focused on bringing <span class="emphasis">accessability</span> and <span class="emphasis">internalization</span> to your site so it reaches a wider audience.</p>
-                    <br>
-                    <p>My primary tech stack utilizes <span class="emphasis">TypeScript, Next.js, & TailwindCSS</span> to build projects.</p>
-                </article>
+                <div class="heroBox">
+                    <article>
+                        <h2>Front End Developer</h2>
+                        <p>I'm focused on bringing <span class="emphasis">accessability</span> and <span class="emphasis">internalization</span> to your site so it reaches a wider audience.</p>
+                        <br>
+                        <p>My primary tech stack utilizes <span class="emphasis">TypeScript, Next.js, & TailwindCSS</span> to build projects.</p>
+                    </article>
+                    <div>
+                        <img src="./assets/hero.png" class="heroImage" alt="illustration of man building large web page" >
+                    </div>
+                </div>
             </div>
         </section>
-        <section class="skills" id="skills">
+        <section class="skills sections" id="skills">
             <div class="skillsWrapper">
                 <h3 class="sectionTitle">Skills</h3>
                 <div class="skillsList">
@@ -149,9 +155,9 @@
                 </div>
             </div>
         </section>
-        <section id="projects"></section>
-        <section id="experience"></section>
-        <section id="contact"></section>
+        <section id="projects sections"></section>
+        <section id="experience sections"></section>
+        <section id="contact sections"></section>
         <button class="scrollBtn" id="scrollBtn">&uarr;</button>
     </main>
     <footer>
@@ -159,6 +165,6 @@
     </footer>
     
 
-    <script src="./main.js" type="module"></script>
+    <script src="./main.js" type="module" defer></script>
 </body>
 </html>

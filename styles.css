@@ -34,12 +34,37 @@ body {
   height: 100vh;
 }
 
-header {
+.navBar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 1em;
+}
+
+.navBar.sticky {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #d3d3d3;
+}
+
+.myLogo {
+  display:flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+  font-size: 1em;
+}
+
+.myImage {
+  width: 5rem;
+}
+
+.myName {
+  font-size: 1.35em;
+  font-weight:bolder;
 }
 
 nav {
@@ -48,6 +73,8 @@ nav {
   justify-content: flex-end;
   width: 80%;
 }
+
+
 
 .navButton {
   display: flex;
@@ -115,8 +142,39 @@ main {
   align-items: center;
 }
 
+.sections {
+  padding-top: 15em;
+}
+
+.heroWrapper {
+  margin-top: 10em;
+}
+
+.heroBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+
 article {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   width:50%;
+}
+
+article > p {
+  width: 60%;
+}
+
+.emphasis {
+  font-weight: bolder;
+}
+
+.heroImage {
+  width: 25rem;
 }
 
 .sectionTitle {
@@ -211,14 +269,6 @@ article {
     flex-wrap: wrap;
     gap: 2em;
   }
-}
-
-#projects {
-  height: 50vh;
-}
-
-#contact {
-  height: 50vh;
 }
 
 .scrollBtn {
