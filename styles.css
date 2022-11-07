@@ -1,13 +1,17 @@
 /*root and .darkMode create base CSS variables to be used with darkMode.js*/
 :root {
-  --body-bg-primary: linear-gradient(to bottom left, rgb(254, 205, 211), rgb(250, 232, 255), #ddd6fe) ;
+  --body-bg-primary: rgb(255, 255, 255);
   --body-bg-secondary: ;
   --body-bg-accent: ;
-  --card-bg: ;
-  --text-color: #404040 ;
-  --text-color-title: ;
+  --card-bg-primary: rgba(168, 230, 250, 0.35);
+  --card-bg-secondary: rgba(245, 190, 229, 0.1);
+  --card-bg-border: rgb(24, 32, 32);
+  --text-color: rgb(24, 32, 32);
+  --text-color-secondary: rgb(10, 160, 184);
+  --text-color-title: rgb(23, 70, 126);
   --text-color-title-active: ;
-  --text-color-secondary: ;
+  --text-accent: rgb(245, 190, 229);
+  --text-color-accent:rgb(36, 171, 193) ;
   --skills-box: ;
 }
 
@@ -31,7 +35,13 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   letter-spacing: 0.15em;
-  height: 100vh;
+  font-variant: small-caps;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items:center;
 }
 
 .navBar {
@@ -39,7 +49,7 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5em 1em;
+  padding: 0.25em 0.5em;
 }
 
 .navBar.sticky {
@@ -47,7 +57,8 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  background-color: #d3d3d3;
+  background-color: var(--body-bg-primary);
+  box-shadow: 0 1px 1px -1px gray;
 }
 
 .myLogo {
@@ -58,12 +69,8 @@ body {
   font-size: 1em;
 }
 
-.myImage {
-  width: 5rem;
-}
-
 .myName {
-  font-size: 1.35em;
+  font-size: 2em;
   font-weight:bolder;
 }
 
@@ -82,18 +89,52 @@ nav {
   align-items: center;
 }
 
-.themeToggle {
-  font-size: inherit;
+.themeToggle, .scrollBtn {
+  align-items: center;
+  background-color: var(--text-accent);
+  border: 1px solid var(--card-bg-border);
+  border-radius: 1em;
+  box-sizing: border-box;
+  color: var(--text-color);
+  cursor: pointer;
+  display: flex;
+  font-size: 1em;
   font-weight: bold;
-/*   background-color: var(--skills-title);
-  color: var(--text-color); */
-  border: none;
-  padding: 0.5em 1em;
-  border-radius: 2em;
+  height: 3em;
+  justify-content: center;
+  line-height: 1.5em;
+  max-width: 100%;
+  padding: 0 1.5em;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  font-variant: small-caps;
 }
 
+.themeToggle:after {
+  background-color: var(--text-color-accent);
+  border-radius: 1em;
+  content: "";
+  display: block;
+  height: 3em;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  transform: translate(0.25em, 0.25em);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.themeToggle:hover:after {
+  transform: translate(0,0);
+}
+.themeToggle:active {
+  background-color: var(--text-accent);
+  outline: 0;
+}
 .themeToggle:hover {
-/*   background-color: var(--skills-title-active); */
+  outline: 0;
 }
 
 .navLists {
@@ -111,10 +152,13 @@ nav {
 }
 
 .navLink {
+  font-size: 1.25em;
+  font-weight:bold;
   text-decoration: none;
   position: relative;
   display: inline-flex;
   z-index: 1;
+  color: var(--text-color-accent);
 }
 
 .navLink:before {
@@ -127,7 +171,7 @@ nav {
   width: 0;
   z-index: -1;
   transform: skew(-12deg) translateX(-50%);
-  background: #d3d3d3;
+  background: var(--text-accent);
   transition: .4s;
 }
 
@@ -158,7 +202,13 @@ main {
   gap: 1em;
 }
 
+.jobTitle {
+  color: var(--text-color-title);
+  font-size: 3em;
+}
+
 article {
+  background-color: var(--card-bg-primary);
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -170,7 +220,9 @@ article > p {
 }
 
 .emphasis {
+  font-size: 1.25em;
   font-weight: bolder;
+  color: var(--text-color-accent);
 }
 
 .heroImage {
@@ -178,7 +230,8 @@ article > p {
 }
 
 .sectionTitle {
-  font-size: 2rem;
+  font-size: 3rem;
+  color: var(--text-color-title);
 }
 
 .skills {
@@ -194,7 +247,7 @@ article > p {
 }
 
 .skillTitle {
-/*   background: var(--skills-title); */
+  background: var(--card-bg-primary);
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
@@ -216,7 +269,7 @@ article > p {
   justify-content: center;
   align-items: center;
   gap: 4em;
-/*   background-color: var(--skills-box); */
+  background-color: var(--card-bg-secondary);
   padding-top: 1.5em;
   width: 100%;
 }

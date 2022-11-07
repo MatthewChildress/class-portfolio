@@ -12,45 +12,46 @@
     <title>Childress Portfolio</title>
 </head>
 <body>
-    <header class="navBar" id="navBar">
-        <div class="myLogo">
-            <img class="myImage" src="./assets/logo.png" alt="logo of man working at computer" />
-            <p class="myName">Matthew Childress</p>
-        </div>
-        <nav>
-            <ul class="navLists">
-                <li class="navList">
-                    <a href="#skills" class="navLink">
-                        Skills
-                    </a>
-                </li>
-                <li class="navList">
-                    <a href="#projects" class="navLink">
-                        Projects
-                    </a>
-                </li>
-                <li class="navList">
-                    <a href="#experience" class="navLink">
-                        Resume
-                    </a>
-                </li>
-                <li class="navList">
-                    <a href="#contact" class="navLink">
-                        Contact
-                    </a>
-                </li>
-            </ul>
-            <div class="navButton">
-                <button class="themeToggle" id="themeToggle">Toggle Dark</button>
+    <header>
+        <div class="navBar" id="navBar">
+            <div class="myLogo">
+                <p class="myName">MC.</p>
             </div>
-        </nav>
+            <nav>
+                <ul class="navLists">
+                    <li class="navList">
+                        <a href="#skills" class="navLink">
+                            Skills
+                        </a>
+                    </li>
+                    <li class="navList">
+                        <a href="#projects" class="navLink">
+                            Projects
+                        </a>
+                    </li>
+                    <li class="navList">
+                        <a href="#experience" class="navLink">
+                            Resume
+                        </a>
+                    </li>
+                    <li class="navList">
+                        <a href="#contact" class="navLink">
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+                <div class="navButton">
+                    <button class="themeToggle" id="themeToggle">Dark Mode</button>
+                </div>
+            </nav>
+        </div>
     </header>
     <main>
         <section id="hero sections">
             <div class="heroWrapper">
                 <div class="heroBox">
                     <article>
-                        <h2>Front End Developer</h2>
+                        <h2 class="jobTitle">Front End Developer</h2>
                         <p>I'm focused on bringing <span class="emphasis">accessability</span> and <span class="emphasis">internalization</span> to your site so it reaches a wider audience.</p>
                         <br>
                         <p>My primary tech stack utilizes <span class="emphasis">TypeScript, Next.js, & TailwindCSS</span> to build projects.</p>
@@ -155,9 +156,35 @@
                 </div>
             </div>
         </section>
-        <section id="projects sections"></section>
-        <section id="experience sections"></section>
-        <section id="contact sections"></section>
+        <section id="projects sections">
+            <div class="projectsWrapper">
+                <h3 class="sectionTitle">Projects</h3>
+            </div>
+        </section>
+        <section id="experience sections">
+            <div class="experienceWrapper">
+                <h3 class="sectionTitle">Experience</h3>
+            </div>
+        </section>
+        <section id="contact sections">
+            <div class="contactWrapper">
+                <h3 class="sectionTitle">Contact Me</h3>
+                <div>
+                    <div>
+                        <p>Email</p>
+                    </div>
+                    <div>
+                        <p>LinkedIn</p>
+                    </div>
+                    <div>
+                        <p>Twitter</p>
+                    </div>
+                    <div>
+                        <p>GitHub</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <button class="scrollBtn" id="scrollBtn">&uarr;</button>
     </main>
     <footer>
