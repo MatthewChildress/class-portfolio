@@ -1,197 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
+    />
     <title>Childress Portfolio</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="navBar" id="navBar">
-            <div class="myLogo">
-                <p class="myName">MC.</p>
-            </div>
-            <nav>
-                <ul class="navLists">
-                    <li class="navList">
-                        <a href="#skills" class="navLink">
-                            Skills
-                        </a>
-                    </li>
-                    <li class="navList">
-                        <a href="#projects" class="navLink">
-                            Projects
-                        </a>
-                    </li>
-                    <li class="navList">
-                        <a href="#experience" class="navLink">
-                            Resume
-                        </a>
-                    </li>
-                    <li class="navList">
-                        <a href="#contact" class="navLink">
-                            Contact
-                        </a>
-                    </li>
-                </ul>
-                <div class="navButton">
-                    <button class="themeToggle" id="themeToggle">Dark Mode</button>
-                </div>
-            </nav>
+      <div class="nav__bar" id="navBar">
+        <div class="nav__logo">
+          <p class="nav__name">MC.</p>
         </div>
+        <nav>
+          <ul class="nav__lists">
+            <li class="nav__list">
+              <a href="#skills" class="nav__link"> Skills </a>
+            </li>
+            <li class="nav__list">
+              <a href="#projects" class="nav__link"> Projects </a>
+            </li>
+            <li class="nav__list">
+              <a href="#experience" class="nav__link"> Resume </a>
+            </li>
+            <li class="nav__list">
+              <a href="#contact" class="nav__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="nav__button">
+            <button class="nav__button__toggle" id="themeToggle">
+              Dark Mode
+            </button>
+          </div>
+        </nav>
+      </div>
     </header>
     <main>
-        <section id="hero sections">
-            <div class="heroWrapper">
-                <div class="heroBox">
-                    <article>
-                        <h2 class="jobTitle">Front End Developer</h2>
-                        <p>I'm focused on bringing <span class="emphasis">accessability</span> and <span class="emphasis">internalization</span> to your site so it reaches a wider audience.</p>
-                        <br>
-                        <p>My primary tech stack utilizes <span class="emphasis">TypeScript, Next.js, & TailwindCSS</span> to build projects.</p>
-                    </article>
-                    <div>
-                        <img src="./assets/hero.png" class="heroImage" alt="illustration of man building large web page" >
-                    </div>
-                </div>
+      <section class="hero sections">
+        <div class="hero__container">
+          <div class="wrapper hero__wrapper">
+            <div class="hero__content">
+              <h2 class="hero__headline">Matthew Childress</h2>
+              <div class="hero__info">
+                <p class="hero__title">Frontend Developer</p>
+                <p class="hero__blurb">
+                  Websites built with a focus on
+                  <span class="emphasis">accessibility</span> and
+                  <span class="emphasis">internalization</span> so everyone can
+                  enjoy their content.
+                </p>
+              </div>
             </div>
-        </section>
-        <section class="skills sections" id="skills">
-            <div class="skillsWrapper">
-                <h3 class="sectionTitle">Skills</h3>
-                <div class="skillsList">
-                    <div class="skillTitle">
-                        <p class="skillTitleText">The Essentials</p>
-                    </div>
-                    <div class="skillsBox">
-                        <div class="skillItem">
-                            <i class="devicon-jamstack-original colored"></i>
-                            <p>JAMstack</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-tailwindcss-plain colored"></i>
-                            <p>TailwindCSS</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-typescript-plain colored"></i>
-                            <p>TypeScript</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-php-plain colored"></i>
-                            <p>PHP</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-csharp-plain colored"></i>
-                            <p>C#</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-python-plain colored"></i>
-                            <p>Python</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="skillsList">
-                    <div class="skillTitle">
-                        <p class="skillTitleText">The Frameworks<p>
-                    </div>
-                    <div class="skillsBox">
-                        <div class="skillItem">
-                            <i class="devicon-react-original colored"></i>
-                            <p>React.js</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-nextjs-original colored"></i>
-                            <p>Next.js</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-express-original colored"></i>
-                            <p>Express.js</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-vuejs-plain colored"></i>
-                            <p>Vue.js</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-laravel-plain colored"></i>
-                            <p>Laravel</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-dotnetcore-plain colored"></i>
-                            <p>.NET Core</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="skillsList">
-                    <div class="skillTitle">
-                        <p class="skillTitleText">The Tools</p>
-                    </div>
-                    <div class="skillsBox">
-                        <div class="skillItem">
-                            <i class="devicon-storybook-plain colored"></i>
-                            <p>Storybook</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-jest-plain colored"></i>
-                            <p>Jest.js</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-graphql-plain colored"></i>
-                            <p>GraphQL</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-redux-original colored"></i>
-                            <p>Redux</p>
-                        </div>
-                        <div class="skillItem">
-                            <i class="devicon-yarn-plain colored"></i>
-                            <p>Yarn</p>
-                        </div>
-                    </div>
-                </div>
+            <img
+              class="hero__image"
+              src="./assets/code.webp"
+              alt="react javascript code on screen"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="skills sections" id="skills">
+        <div class="skills skills__wrapper">
+          <h3 class="section__title">Skills</h3>
+          <div class="skills__list">
+            <div class="skill__title">
+              <p class="skill__title__text">The Essentials</p>
             </div>
-        </section>
-        <section id="projects sections">
-            <div class="projectsWrapper">
-                <h3 class="sectionTitle">Projects</h3>
+            <div class="skills__box">
+              <div class="skill__item">
+                <i class="devicon-jamstack-original colored"></i>
+                <p>JAMstack</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-tailwindcss-plain colored"></i>
+                <p>TailwindCSS</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-typescript-plain colored"></i>
+                <p>TypeScript</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-php-plain colored"></i>
+                <p>PHP</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-csharp-plain colored"></i>
+                <p>C#</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-python-plain colored"></i>
+                <p>Python</p>
+              </div>
             </div>
-        </section>
-        <section id="experience sections">
-            <div class="experienceWrapper">
-                <h3 class="sectionTitle">Experience</h3>
+          </div>
+          <div class="skills__list">
+            <div class="skill__title">
+              <p class="skill__title__text">The Frameworks</p>
+              <p></p>
             </div>
-        </section>
-        <section id="contact sections">
-            <div class="contactWrapper">
-                <h3 class="sectionTitle">Contact Me</h3>
-                <div>
-                    <div>
-                        <p>Email</p>
-                    </div>
-                    <div>
-                        <p>LinkedIn</p>
-                    </div>
-                    <div>
-                        <p>Twitter</p>
-                    </div>
-                    <div>
-                        <p>GitHub</p>
-                    </div>
-                </div>
+
+            <div class="skills__box">
+              <div class="skill__item">
+                <i class="devicon-react-original colored"></i>
+                <p>React.js</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-nextjs-original colored"></i>
+                <p>Next.js</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-express-original colored"></i>
+                <p>Express.js</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-vuejs-plain colored"></i>
+                <p>Vue.js</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-laravel-plain colored"></i>
+                <p>Laravel</p>
+              </div>
+
+              <div class="skill__item">
+                <i class="devicon-dotnetcore-plain colored"></i>
+                <p>.NET Core</p>
+              </div>
             </div>
-        </section>
-        <button class="scrollBtn" id="scrollBtn">&uarr;</button>
+          </div>
+          <div class="skills__list">
+            <div class="skill__title">
+              <p class="skill__title__text">The Tools</p>
+            </div>
+            <div class="skills__box">
+              <div class="skill__item">
+                <i class="devicon-storybook-plain colored"></i>
+                <p>Storybook</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-jest-plain colored"></i>
+                <p>Jest.js</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-graphql-plain colored"></i>
+                <p>GraphQL</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-redux-original colored"></i>
+                <p>Redux</p>
+              </div>
+              <div class="skill__item">
+                <i class="devicon-yarn-plain colored"></i>
+                <p>Yarn</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projects sections">
+        <div class="wrapper projectsWrapper">
+          <h3 class="section__title">Projects</h3>
+        </div>
+      </section>
+      <section id="experience sections">
+        <div class="wrapper experienceWrapper">
+          <h3 class="section__title">Experience</h3>
+        </div>
+      </section>
+      <section id="contact sections">
+        <div class="wrapper contactWrapper">
+          <h3 class="section__title">Contact Me</h3>
+          <div>
+            <div>
+              <p>Email</p>
+            </div>
+            <div>
+              <p>LinkedIn</p>
+            </div>
+            <div>
+              <p>Twitter</p>
+            </div>
+            <div>
+              <p>GitHub</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <button class="scroll__button" id="scrollBtn">&uarr;</button>
     </main>
     <footer>
-        <i class="devicon-github-original colored"></i>
+      <i class="devicon-github-original colored"></i>
     </footer>
-    
 
     <script src="./main.js" type="module" defer></script>
-</body>
+  </body>
 </html>

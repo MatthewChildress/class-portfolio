@@ -6,7 +6,7 @@
   --card-bg-primary: rgba(168, 230, 250, 0.35);
   --card-bg-secondary: rgba(245, 190, 229, 0.1);
   --card-bg-border: rgb(24, 32, 32);
-  --text-color: rgb(24, 32, 32);
+  --text-color: rgb(20, 100, 161);
   --text-color-secondary: rgb(10, 160, 184);
   --text-color-title: rgb(23, 70, 126);
   --text-color-title-active: ;
@@ -15,12 +15,12 @@
   --skills-box: ;
 }
 
-.darkMode {
+.dark__mode {
   --body-bg-primary: linear-gradient(to bottom right, rgba(195, 55, 100, .8), rgba(155, 79, 98, .5), rgba(29, 38, 113, .7)) ;
   --body-bg-secondary: ;
   --body-bg-accent: ;
   --card-bg: ;
-  --text-color: #f4f4f4 ;
+  --text-color: ;
   --text-color-title: ;
   --text-color-title-active: ;
   --text-color-secondary: ;
@@ -30,8 +30,8 @@
 body {
   margin: 0px;
   padding: 0px;
-  font-family: "Nunito", sans-serif;
-  background: var(--body-bg-primary);
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--body-bg-primary);
   color: var(--text-color);
   line-height: 1.6;
   letter-spacing: 0.15em;
@@ -44,7 +44,7 @@ header {
   align-items:center;
 }
 
-.navBar {
+.nav__bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -52,16 +52,17 @@ header {
   padding: 0.25em 0.5em;
 }
 
-.navBar.sticky {
+.nav__bar.sticky {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: var(--body-bg-primary);
-  box-shadow: 0 1px 1px -1px gray;
+  z-index: 10;
+  padding: 0 0.5em;
 }
 
-.myLogo {
+.nav__logo {
   display:flex;
   flex-direction: row;
   gap: 1em;
@@ -69,8 +70,8 @@ header {
   font-size: 1em;
 }
 
-.myName {
-  font-size: 2em;
+.nav__name {
+  font-size: 1.5em;
   font-weight:bolder;
 }
 
@@ -83,14 +84,14 @@ nav {
 
 
 
-.navButton {
+.nav__button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.themeToggle, .scrollBtn {
-  align-items: center;
+.nav__button__toggle, .scroll__button {
+/*   align-items: center;
   background-color: var(--text-accent);
   border: 1px solid var(--card-bg-border);
   border-radius: 1em;
@@ -108,10 +109,10 @@ nav {
   position: relative;
   text-align: center;
   text-decoration: none;
-  font-variant: small-caps;
+  font-variant: small-caps; */
 }
 
-.themeToggle:after {
+/* .nav__button__toggle:after {
   background-color: var(--text-color-accent);
   border-radius: 1em;
   content: "";
@@ -126,18 +127,18 @@ nav {
   z-index: -1;
 }
 
-.themeToggle:hover:after {
+.nav__button__toggle:hover:after {
   transform: translate(0,0);
 }
-.themeToggle:active {
+.nav__button__toggle:active {
   background-color: var(--text-accent);
   outline: 0;
 }
-.themeToggle:hover {
+.nav__button__toggle:hover {
   outline: 0;
-}
+} */
 
-.navLists {
+.nav__lists {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -147,21 +148,21 @@ nav {
   padding-right: 1em;
 }
 
-.navList {
+.nav__list {
   padding: 0 1em;
 }
 
-.navLink {
+.nav__link {
   font-size: 1.25em;
   font-weight:bold;
   text-decoration: none;
   position: relative;
   display: inline-flex;
   z-index: 1;
-  color: var(--text-color-accent);
+  color: var(--text-color);
 }
 
-.navLink:before {
+.nav__link:before {
   content: '';
   position: absolute;
   display: flex;
@@ -175,7 +176,7 @@ nav {
   transition: .4s;
 }
 
-.navLink:hover:before {
+.nav__link:hover:before {
   width: calc(100% + 1em);
 }
 
@@ -187,66 +188,122 @@ main {
 }
 
 .sections {
-  padding-top: 15em;
+  padding-top: 10em;
+  width:70%;
 }
 
-.heroWrapper {
-  margin-top: 10em;
-}
-
-.heroBox {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-}
-
-.jobTitle {
-  color: var(--text-color-title);
-  font-size: 3em;
-}
-
-article {
-  background-color: var(--card-bg-primary);
+.wrapper {
+  max-width: 1170px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  width:50%;
+  align-items: center;
 }
 
-article > p {
-  width: 60%;
+.hero__container {
+  --gradient-dir: to right;
+  position: relative;
+  min-height: calc(300px + 15vw);
+  display: grid;
+  border-radius: 1em;
+}
+
+.hero__container::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.9;
+  border-radius: 1em;
+  box-shadow: 0 0 1rem 0 var(--text-accent);
+  background: linear-gradient(
+      var(--gradient-dir),
+      rgb(0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.995) 8.2%,
+      rgba(0, 0, 0, 0.981) 16%,
+      rgba(0, 0, 0, 0.958) 23.4%,
+      rgba(0, 0, 0, 0.926) 30.4%,
+      rgba(0, 0, 0, 0.885) 37.3%,
+      rgba(0, 0, 0, 0.835) 43.8%,
+      rgba(0, 0, 0, 0.776) 50.2%,
+      rgba(0, 0, 0, 0.709) 56.5%,
+      rgba(0, 0, 0, 0.633) 62.6%,
+      rgba(0, 0, 0, 0.548) 68.7%,
+      rgba(0, 0, 0, 0.455) 74.8%,
+      rgba(0, 0, 0, 0.354) 81%,
+      rgba(0, 0, 0, 0.244) 87.2%,
+      rgba(0, 0, 0, 0.126) 93.5%,
+      rgba(0, 0, 0, 0) 100%
+    )
+    left center/100% no-repeat;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  border-radius: 1em;
+}
+
+.hero__wrapper {
+  flex: 1;
+  display: grid;
+  place-content: end start;
+  align-content: center;
+  width: 100%;
+}
+
+.hero__content {
+  flex: 1;
+  z-index: 2;
+  padding: 1rem 0 1rem 1rem;
+  max-width: 65ch;
+  margin-left: 4.5rem;
+  color: rgb(255, 255, 255);
+}
+
+.hero__headline {
+  color: var(--text-accent);
+  background:rgba(0, 0, 0, 0.4);
+  font-size: clamp(1.5rem, 6vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.hero__title {
+  font-size: clamp(1.35rem, 5vw, 1.75rem);
+}
+
+.hero__blurb {
+  font-size: clamp(1rem, 4.5vw, 1.25rem);
+  font-variant: normal;
 }
 
 .emphasis {
-  font-size: 1.25em;
+  color: var(--text-accent);
+  background:rgba(0, 0, 0, 0.4);
+  font-size: clamp(1.35rem, 5vw, 1.75rem);
   font-weight: bolder;
-  color: var(--text-color-accent);
 }
 
-.heroImage {
-  width: 25rem;
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
 }
 
-.sectionTitle {
+.section__title {
   font-size: 3rem;
   color: var(--text-color-title);
 }
 
-.skills {
-  width: 60%;
-}
-
-.skillsWrapper,
-.heroWrapper {
+.skills__wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 }
 
-.skillTitle {
+.skill__title {
   background: var(--card-bg-primary);
   font-size: 1.5rem;
   font-weight: bold;
@@ -257,13 +314,13 @@ article > p {
   transition: 0.5s;
 }
 
-/* "+" is a sibling combinator -- if .skillsBox is directly after .skillTitle, do this */
-.skillTitle + .skillsBox {
+/* "+" is a sibling combinator -- if .skills__box is directly after .skill__title, do this */
+.skill__title + .skills__box {
   display: none;
 }
 
 /* Additionally here, same as above but if .is-open is added, then the CSS is now this */
-.skillTitle.is-open + .skillsBox {
+.skill__title.is-open + .skills__box {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -274,34 +331,42 @@ article > p {
   width: 100%;
 }
 
-.skillTitle.is-open {
+.skill__title.is-open {
 /*   border-bottom: 1px solid var(--text-color); */
 }
 
-.skillTitle.is-open,
-.skillTitle:hover {
+.skill__title.is-open,
+.skill__title:hover {
 /*   background-color: var(--skills-title-active); */
 }
 
-.skillTitleText {
+.skill__title__text {
   padding-left: 1em;
 }
-.skillsList {
+.skills__list {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
 
-.skillItem {
+.skill__item {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 5em;
 }
 
-.skillItem > i {
+.skill__item > i {
   font-size: 2em;
+}
+
+.scroll__button {
+  position: fixed;
+  z-index: 99;
+  bottom: 1.7em;
+  right: 1.5em;
+  display: none;
 }
 
 /* controls CSS for screen sizes under traditional tablet threshold */
@@ -316,7 +381,7 @@ article > p {
   .skills {
     width: 90%;
   }
-  .skillTitle.is-open + .skillsBox {
+  .skill__title.is-open + .skills__box {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -324,20 +389,12 @@ article > p {
   }
 }
 
-.scrollBtn {
-  position: fixed;
-  z-index: 99;
-  bottom: 1.7em;
-  right: 1.5em;
-  display: none;
-}
-
 /* The sizes between tablet and small laptops */
 @media only screen and (min-width: 769px) and (max-width: 1280px) {
   .skills {
     width: 70%;
   }
-  .skillTitle.is-open + .skillsBox {
+  .skill__title.is-open + .skills__box {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;

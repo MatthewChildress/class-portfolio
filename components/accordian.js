@@ -11,7 +11,7 @@ The ternary operator adds or removes class names depending on current status
 truthy status will remove a class name falsy status will first call activeSkills() to remove the class name from
 other elements that currently have then add the class name to the targeted element */
 export const openSkills = () => {
-const titles = document.querySelectorAll('.skillTitle');
+const titles = document.querySelectorAll('.skill__title');
 titles.forEach((title) => {
     title.addEventListener('click', () => {
 

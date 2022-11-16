@@ -8,7 +8,7 @@ export const darkMode = () => {
     let toggle = document.querySelector('#themeToggle');
 
     toggle.addEventListener('click', () => {
-        document.body.classList.toggle('darkMode');
-        page.classList.contains("darkMode") ? toggle.textContent = 'Toggle Light' : toggle.textContent = 'Toggle Dark';
+        document.body.classList.toggle('dark__mode');
+        page.classList.contains("dark__mode") ? toggle.textContent = 'Toggle Light' : toggle.textContent = 'Toggle Dark';
     })
 }
