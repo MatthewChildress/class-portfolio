@@ -1,7 +1,7 @@
 const scrollBtn = document.getElementById('scrollBtn');
 
 export const showScrollButton = () => {
-    (document.body.scrollTop > 25 || document.documentElement.scrollTop > 25) ? scrollBtn.style.display = 'block' : scrollBtn.style.display = 'none';
+    (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) ? scrollBtn.style.display = 'block' : scrollBtn.style.display = 'none';
 
 }
 

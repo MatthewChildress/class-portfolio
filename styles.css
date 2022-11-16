@@ -2,21 +2,35 @@
 :root {
   --body-bg-primary: rgb(255, 255, 255);
   --body-bg-secondary: ;
-  --body-bg-accent: ;
-  --card-bg-primary: rgba(168, 230, 250, 0.35);
-  --card-bg-secondary: rgba(245, 190, 229, 0.1);
-  --card-bg-border: rgb(24, 32, 32);
+  --body-bg-accent: linear-gradient(
+    to right,
+    rgba(245, 190, 229, 0),
+    rgba(245, 190, 229, 0.75),
+    rgba(245, 190, 229, 0)
+  );
+  --card-bg-primary: rgb(193, 212, 229);
+  --card-bg-secondary: #f7f7f7;
+  --card-bg-title: rgb(255, 227, 204);
+  --card-bg-title-border: rgb(246, 221, 95);
   --text-color: rgb(20, 100, 161);
   --text-color-secondary: rgb(10, 160, 184);
-  --text-color-title: rgb(23, 70, 126);
-  --text-color-title-active: ;
+  --card-text-border: rgb(20, 15, 24);
+  --text-color-title-active: rgb(8, 89, 82);
   --text-accent: rgb(245, 190, 229);
-  --text-color-accent:rgb(36, 171, 193) ;
-  --skills-box: ;
+  --skills-title-active: rgb(156, 186, 219);
+  --box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
+  0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+  0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+  0 100px 80px rgba(0, 0, 0, 0.12);
 }
 
 .dark__mode {
-  --body-bg-primary: linear-gradient(to bottom right, rgba(195, 55, 100, .8), rgba(155, 79, 98, .5), rgba(29, 38, 113, .7)) ;
+  --body-bg-primary: linear-gradient(
+    to bottom right,
+    rgba(195, 55, 100, 0.8),
+    rgba(155, 79, 98, 0.5),
+    rgba(29, 38, 113, 0.7)
+  );
   --body-bg-secondary: ;
   --body-bg-accent: ;
   --card-bg: ;
@@ -24,13 +38,12 @@
   --text-color-title: ;
   --text-color-title-active: ;
   --text-color-secondary: ;
-  --skills-box: ;
 }
 
 body {
   margin: 0px;
   padding: 0px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: var(--body-bg-primary);
   color: var(--text-color);
   line-height: 1.6;
@@ -38,21 +51,19 @@ body {
   font-variant: small-caps;
 }
 
+a {
+  text-decoration: none;
+  color: var(--text-color-secondary);
+  font-weight: bold;
+}
+
 header {
   display: flex;
   justify-content: center;
-  align-items:center;
-}
-
-.nav__bar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.25em 0.5em;
 }
 
-.nav__bar.sticky {
+header.sticky {
   position: fixed;
   top: 0;
   left: 0;
@@ -63,16 +74,20 @@ header {
 }
 
 .nav__logo {
-  display:flex;
+  display: flex;
   flex-direction: row;
   gap: 1em;
   align-items: center;
   font-size: 1em;
+
 }
 
 .nav__name {
+  padding: 1rem;
   font-size: 1.5em;
-  font-weight:bolder;
+  font-weight: bolder;
+  border-right: 2px solid var(--text-accent); 
+  border-bottom: 1px solid var(--text-accent);
 }
 
 nav {
@@ -82,67 +97,17 @@ nav {
   width: 80%;
 }
 
-
-
 .nav__button {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.nav__button__toggle, .scroll__button {
-/*   align-items: center;
-  background-color: var(--text-accent);
-  border: 1px solid var(--card-bg-border);
-  border-radius: 1em;
-  box-sizing: border-box;
-  color: var(--text-color);
-  cursor: pointer;
-  display: flex;
-  font-size: 1em;
-  font-weight: bold;
-  height: 3em;
-  justify-content: center;
-  line-height: 1.5em;
-  max-width: 100%;
-  padding: 0 1.5em;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  font-variant: small-caps; */
-}
-
-/* .nav__button__toggle:after {
-  background-color: var(--text-color-accent);
-  border-radius: 1em;
-  content: "";
-  display: block;
-  height: 3em;
-  left: 0;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  transform: translate(0.25em, 0.25em);
-  transition: transform .2s ease-out;
-  z-index: -1;
-}
-
-.nav__button__toggle:hover:after {
-  transform: translate(0,0);
-}
-.nav__button__toggle:active {
-  background-color: var(--text-accent);
-  outline: 0;
-}
-.nav__button__toggle:hover {
-  outline: 0;
-} */
-
 .nav__lists {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items:center;
+  align-items: center;
   list-style: none;
   gap: 4em;
   padding-right: 1em;
@@ -153,17 +118,14 @@ nav {
 }
 
 .nav__link {
-  font-size: 1.25em;
-  font-weight:bold;
-  text-decoration: none;
+  font-size: 1.25rem;
   position: relative;
   display: inline-flex;
   z-index: 1;
-  color: var(--text-color);
 }
 
 .nav__link:before {
-  content: '';
+  content: "";
   position: absolute;
   display: flex;
   bottom: 0.15em;
@@ -173,11 +135,45 @@ nav {
   z-index: -1;
   transform: skew(-12deg) translateX(-50%);
   background: var(--text-accent);
-  transition: .4s;
+  transition: 0.4s;
 }
 
 .nav__link:hover:before {
   width: calc(100% + 1em);
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 3em;
+  height: 1.5em;
+  background-color: var(--text-accent);
+  border-radius: 1.25em;
+  transition: all 0.3s;
+}
+
+.toggle::after {
+  content: '';
+  position: absolute;
+  width: 1.25em;
+  height: 1.25em;
+  border-radius: 50%;
+  background-color: var(--text-color-secondary);
+  top: 2px;
+  left: 3px;
+  transition: all 0.3s;
+}
+
+.nav__toggle:checked + .toggle::after {
+  left: 1.5em;
+}
+
+.nav__toggle:checked + .toggle {
+  background-color: #7983ff;
+}
+
+.nav__toggle {
+  display: none;
 }
 
 main {
@@ -187,33 +183,60 @@ main {
   align-items: center;
 }
 
+hr {
+  border: 0;
+  width: 70%;
+  height: 1px;
+  background-image: var(--body-bg-accent);
+}
+
 .sections {
-  padding-top: 10em;
-  width:70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 0;
+  width: 60%;
 }
 
 .wrapper {
-  max-width: 1170px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
+  border-radius: 1em;
+  box-shadow: var(--box-shadow);
 }
 
-.hero__container {
+.section__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.section__title > p {
+  font-size: 2.5rem;
+}
+
+.hero {
+  padding-top: 15rem;
+  width: 70%;
+}
+
+.hero__wrapper {
   --gradient-dir: to right;
   position: relative;
   min-height: calc(300px + 15vw);
   display: grid;
-  border-radius: 1em;
 }
 
-.hero__container::after {
+.hero__wrapper::after {
   content: "";
   position: absolute;
   inset: 0;
   opacity: 0.9;
   border-radius: 1em;
-  box-shadow: 0 0 1rem 0 var(--text-accent);
+
   background: linear-gradient(
       var(--gradient-dir),
       rgb(0, 0, 0) 0%,
@@ -245,7 +268,7 @@ main {
   border-radius: 1em;
 }
 
-.hero__wrapper {
+.hero__container {
   flex: 1;
   display: grid;
   place-content: end start;
@@ -264,7 +287,7 @@ main {
 
 .hero__headline {
   color: var(--text-accent);
-  background:rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
   font-size: clamp(1.5rem, 6vw, 3rem);
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -281,7 +304,7 @@ main {
 
 .emphasis {
   color: var(--text-accent);
-  background:rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.4);
   font-size: clamp(1.35rem, 5vw, 1.75rem);
   font-weight: bolder;
 }
@@ -292,35 +315,25 @@ main {
   box-sizing: border-box;
 }
 
-.section__title {
-  font-size: 3rem;
-  color: var(--text-color-title);
-}
-
-.skills__wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.skill__title {
+.accordian {
   background: var(--card-bg-primary);
+  color: var(--card-text-border);
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
   text-align: center;
   width: 100%;
   outline: none;
-  transition: 0.5s;
+  transition: 0.75s;
 }
 
 /* "+" is a sibling combinator -- if .skills__box is directly after .skill__title, do this */
-.skill__title + .skills__box {
+.accordian + .accordian__box {
   display: none;
 }
 
 /* Additionally here, same as above but if .is-open is added, then the CSS is now this */
-.skill__title.is-open + .skills__box {
+.accordian.is-open + .accordian__box {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -329,21 +342,22 @@ main {
   background-color: var(--card-bg-secondary);
   padding-top: 1.5em;
   width: 100%;
+  box-shadow: rgb(223, 222, 222) 0px 0px 9px 3px inset;
 }
 
-.skill__title.is-open {
-/*   border-bottom: 1px solid var(--text-color); */
+.accordian.is-open {
+  border-bottom: 1px solid var(--text-color);
 }
 
-.skill__title.is-open,
-.skill__title:hover {
-/*   background-color: var(--skills-title-active); */
+.accordian.is-open,
+.accordian:hover {
+  background-color: var(--skills-title-active);
 }
 
 .skill__title__text {
   padding-left: 1em;
 }
-.skills__list {
+.skills__list, .experience__list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -357,9 +371,56 @@ main {
   width: 5em;
 }
 
-.skill__item > i {
+.skill__item > i,
+.contact__item > i {
   font-size: 2em;
+  font-weight: bold;
+  color: var(--card-text-border);
 }
+
+.contact__item > span {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--card-text-border);
+  padding-bottom: 0.75rem;
+}
+
+.section__blurb {
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-variant: normal;
+  padding: 1em 0;
+  width: 100%;
+  background-color: var(--card-bg-title);
+  border-bottom: 1px solid var(--card-text-border);
+}
+.contact__list {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+}
+
+.contact__item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:100%;
+  padding: 3em;
+  gap: 1.5rem;
+}
+
+footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 1.5rem;
+}
+
 
 .scroll__button {
   position: fixed;
@@ -367,38 +428,13 @@ main {
   bottom: 1.7em;
   right: 1.5em;
   display: none;
-}
-
-/* controls CSS for screen sizes under traditional tablet threshold */
-@media only screen and (max-width: 768px) {
-  body {
-    letter-spacing: 0.1em;
-  }
-  header {
-    display: flex;
-    flex-direction: column;
-  }
-  .skills {
-    width: 90%;
-  }
-  .skill__title.is-open + .skills__box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2em;
-  }
-}
-
-/* The sizes between tablet and small laptops */
-@media only screen and (min-width: 769px) and (max-width: 1280px) {
-  .skills {
-    width: 70%;
-  }
-  .skill__title.is-open + .skills__box {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 5rem;
-    font-size: 0.8em;
-  }
+  color: var(--text-color-secondary);
+  background-color: var(--text-accent);
+  border: none;
+  font-size: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  padding-bottom:0.5rem;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
 }
