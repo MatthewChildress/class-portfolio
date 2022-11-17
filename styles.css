@@ -1,43 +1,68 @@
 /*root and .darkMode create base CSS variables to be used with darkMode.js*/
 :root {
   --body-bg-primary: rgb(255, 255, 255);
-  --body-bg-secondary: ;
   --body-bg-accent: linear-gradient(
     to right,
     rgba(245, 190, 229, 0),
     rgba(245, 190, 229, 0.75),
     rgba(245, 190, 229, 0)
   );
-  --card-bg-primary: rgb(193, 212, 229);
-  --card-bg-secondary: #f7f7f7;
-  --card-bg-title: rgb(255, 227, 204);
-  --card-bg-title-border: rgb(246, 221, 95);
   --text-color: rgb(20, 100, 161);
   --text-color-secondary: rgb(10, 160, 184);
-  --card-text-border: rgb(20, 15, 24);
-  --text-color-title-active: rgb(8, 89, 82);
   --text-accent: rgb(245, 190, 229);
-  --skills-title-active: rgb(156, 186, 219);
+  --text-accent-active: rgb(254, 137, 251);
+  --accordian-bg-primary: rgb(193, 212, 229);
+  --accordian-bg-secondary: rgb(247, 247, 247);
+  --accordian-bg-active: rgb(156, 186, 219);
+  --card-text: rgb(0, 0, 0);
+  --card-text-accent: rgb(20, 15, 24);
+  --card-text-blurb: rgb(255, 255, 255);
+  --card-bg-blurb: rgb(50, 38, 60);
+  --body-title-shadow: 0px 15px 5px rgba(0, 0, 0, 0.1),
+    10px 20px 5px rgba(0, 0, 0, 0.05), -10px 20px 5px rgba(0, 0, 0, 0.05);
+  --card-text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+  --box-shadow-inner: rgb(223, 222, 222) 0px 0px 9px 3px inset;
   --box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-  0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-  0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-  0 100px 80px rgba(0, 0, 0, 0.12);
+    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
+    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
+    0 100px 80px rgba(0, 0, 0, 0.12);
+  --scroll-bg: rgb(245, 190, 229);
+  --scroll-text: rgb(10, 160, 184);
+  --scroll-text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
 }
 
 .dark__mode {
-  --body-bg-primary: linear-gradient(
-    to bottom right,
-    rgba(195, 55, 100, 0.8),
-    rgba(155, 79, 98, 0.5),
-    rgba(29, 38, 113, 0.7)
+  --body-bg-primary: rgb(29, 31, 57);
+  --body-bg-accent: linear-gradient(
+    to right,
+    rgba(254, 137, 251, 0),
+    rgba(254, 137, 251, 0.75),
+    rgba(254, 137, 251, 0)
   );
-  --body-bg-secondary: ;
-  --body-bg-accent: ;
-  --card-bg: ;
-  --text-color: ;
-  --text-color-title: ;
-  --text-color-title-active: ;
-  --text-color-secondary: ;
+  --text-color: rgb(247, 247, 247);
+  --text-color-secondary: rgb(254, 154, 68);
+  --text-accent: rgb(254, 137, 251);
+  --text-accent-active: rgb(197, 233, 235);
+  --accordian-bg-primary: rgb(34, 35, 37);
+  --accordian-bg-active: rgb(73, 59, 110);
+  --accordian-bg-secondary: rgb(20, 15, 24);
+  --card-text: rgb(255, 255, 255);
+  --card-text-accent: rgb(220, 154, 212);
+  --card-text-blurb: rgb(255, 121, 112);
+  --card-bg-blurb: rgb(28, 29, 31);
+  --body-title-shadow: 0px 15px 5px rgba(255, 205, 162, 0.1),
+    10px 20px 5px rgba(255, 205, 162, 0.05),
+    -10px 20px 5px rgba(255, 205, 162, 0.05);
+  --card-text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4),
+    0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1);
+  --box-shadow-inner: rgb(223, 222, 222) 0px 0px 6px 1px inset;
+  --box-shadow: 0 0 2px rgb(255, 255, 255), 0 0 10px rgb(255, 255, 169),
+    0 0 20px rgb(185, 52, 169), 0 0 30px rgb(185, 52, 169),
+    0 0 40px rgb(185, 52, 169), 0 0 50px rgb(185, 52, 169);
+  --scroll-bg: rgb(35, 71, 105);
+  --scroll-text: rgb(93, 98, 104);
+  --scroll-text-shadow: 2px 2px 3px rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -70,24 +95,21 @@ header.sticky {
   right: 0;
   background-color: var(--body-bg-primary);
   z-index: 10;
-  padding: 0 0.5em;
+  height: 8%;
 }
 
 .nav__logo {
   display: flex;
   flex-direction: row;
-  gap: 1em;
   align-items: center;
-  font-size: 1em;
-
 }
 
 .nav__name {
-  padding: 1rem;
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bolder;
-  border-right: 2px solid var(--text-accent); 
+  border-right: 3px solid var(--text-accent);
   border-bottom: 1px solid var(--text-accent);
+  text-shadow: var(--card-text-shadow);
 }
 
 nav {
@@ -122,6 +144,7 @@ nav {
   position: relative;
   display: inline-flex;
   z-index: 1;
+  text-shadow: var(--body-title-shadow);
 }
 
 .nav__link:before {
@@ -134,7 +157,7 @@ nav {
   width: 0;
   z-index: -1;
   transform: skew(-12deg) translateX(-50%);
-  background: var(--text-accent);
+  background: var(--text-accent-active);
   transition: 0.4s;
 }
 
@@ -153,7 +176,7 @@ nav {
 }
 
 .toggle::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 1.25em;
   height: 1.25em;
@@ -169,7 +192,7 @@ nav {
 }
 
 .nav__toggle:checked + .toggle {
-  background-color: #7983ff;
+  background-color: var(--text-accent-active);
 }
 
 .nav__toggle {
@@ -212,10 +235,12 @@ hr {
   display: flex;
   align-items: center;
   justify-content: center;
+  text-shadow: var(--body-title-shadow);
 }
 
 .section__title > p {
-  font-size: 2.5rem;
+  font-size: 3.5rem;
+  font-weight: 500;
 }
 
 .hero {
@@ -266,6 +291,7 @@ hr {
   height: 100%;
   max-width: 100%;
   border-radius: 1em;
+  aspect-ratio: 3 / 2;
 }
 
 .hero__container {
@@ -316,8 +342,8 @@ hr {
 }
 
 .accordian {
-  background: var(--card-bg-primary);
-  color: var(--card-text-border);
+  background: var(--accordian-bg-primary);
+  color: var(--card-text-accent);
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
@@ -339,10 +365,10 @@ hr {
   justify-content: center;
   align-items: center;
   gap: 4em;
-  background-color: var(--card-bg-secondary);
+  background-color: var(--accordian-bg-secondary);
   padding-top: 1.5em;
   width: 100%;
-  box-shadow: rgb(223, 222, 222) 0px 0px 9px 3px inset;
+  box-shadow: var(--box-shadow-inner);
 }
 
 .accordian.is-open {
@@ -351,13 +377,16 @@ hr {
 
 .accordian.is-open,
 .accordian:hover {
-  background-color: var(--skills-title-active);
+  background-color: var(--accordian-bg-active);
 }
 
-.skill__title__text {
+.skill__title__text,
+.experience__title__text {
   padding-left: 1em;
+  text-shadow: var(--card-text-shadow);
 }
-.skills__list, .experience__list {
+.skills__list,
+.experience__list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -375,30 +404,38 @@ hr {
 .contact__item > i {
   font-size: 2em;
   font-weight: bold;
-  color: var(--card-text-border);
+  color: var(--card-text-accent);
 }
 
 .contact__item > span {
   font-size: 3rem;
   font-weight: bold;
-  color: var(--card-text-border);
+  color: var(--card-text-accent);
   padding-bottom: 0.75rem;
 }
 
 .section__blurb {
   display: flex;
   justify-content: center;
-  font-size: 1.5rem;
-  font-variant: normal;
-  padding: 1em 0;
+  padding: 0.1em 0;
   width: 100%;
-  background-color: var(--card-bg-title);
-  border-bottom: 1px solid var(--card-text-border);
+  background-color: var(--card-bg-blurb);
+  border-bottom: 1px solid var(--card-text-accent);
+  text-shadow: var(--card-text-shadow);
 }
+
+.section__blurb__text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  font-variant: normal;
+  color: var(--card-text-blurb);
+}
+
 .contact__list {
   display: grid;
   justify-content: center;
   align-items: center;
+  background-color: var(--accordian-bg-active);
   grid-template-columns: repeat(2, 1fr);
   width: 100%;
 }
@@ -407,9 +444,13 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  width:100%;
+  width: 100%;
   padding: 3em;
   gap: 1.5rem;
+}
+
+.contact__item > a {
+  color: var(--card-text);
 }
 
 footer {
@@ -421,20 +462,20 @@ footer {
   font-size: 1.5rem;
 }
 
-
 .scroll__button {
   position: fixed;
   z-index: 99;
   bottom: 1.7em;
   right: 1.5em;
   display: none;
-  color: var(--text-color-secondary);
-  background-color: var(--text-accent);
+  color: var(--scroll-text);
+  background-color: var(--scroll-bg);
   border: none;
   font-size: 1.5rem;
   width: 2.5rem;
   height: 2.5rem;
-  padding-bottom:0.5rem;
+  padding-bottom: 0.5rem;
   border-radius: 50%;
   box-shadow: var(--box-shadow);
+  text-shadow: var(--scroll-text-shadow);
 }
