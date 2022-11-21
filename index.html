@@ -2,17 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="matt childress portfolio">
-    <meta name="keywords" content="portfolio, javascript"
-    <meta name="author" content="Matt Childress">
+    <meta name="description" content="matt childress portfolio" />
+    <meta
+      name="keywords"
+      content="portfolio, javascript"
+      <meta
+      name="author"
+      content="Matt Childress"
+    />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"
@@ -21,9 +29,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0&display=swap"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <title>Childress Portfolio</title>
   </head>
   <body>
+    <!-- header and navbar -->
     <header id="navBar">
       <div class="nav__logo">
         <p class="nav__name">
@@ -57,7 +67,8 @@
       </div>
     </header>
     <main>
-      <section class="hero sections">
+      <!-- hero section -->
+      <section class="hero">
         <div class="wrapper hero__wrapper">
           <div class="hero__container">
             <div class="hero__content">
@@ -81,15 +92,14 @@
         </div>
       </section>
       <hr />
+      <!-- skills section -->
       <section class="skills sections" id="skills">
         <div class="section__title">
           <p>Skills</p>
         </div>
         <div class="wrapper skills__wrapper">
           <div class="section__blurb">
-            <p class="section__blurb__text">
-              Technologies I Use Regularly
-            </p>
+            <p class="section__blurb__text">Technologies I Use Regularly</p>
           </div>
           <div class="skills__list">
             <div class="skill__title accordian">
@@ -127,7 +137,6 @@
               <p class="skill__title__text">The Frameworks</p>
               <p></p>
             </div>
-
             <div class="skills__box accordian__box">
               <div class="skill__item">
                 <i class="devicon-react-original colored"></i>
@@ -149,7 +158,6 @@
                 <i class="devicon-laravel-plain colored"></i>
                 <p>Laravel</p>
               </div>
-
               <div class="skill__item">
                 <i class="devicon-dotnetcore-plain colored"></i>
                 <p>.NET Core</p>
@@ -186,6 +194,7 @@
         </div>
       </section>
       <hr />
+      <!-- projects section -->
       <section class="projects sections" id="projects">
         <div class="section__title">
           <p>Projects</p>
@@ -193,21 +202,158 @@
         <div class="wrapper projects__wrapper">
           <div class="section__blurb">
             <p class="section__blurb__text">
-              Some of My Latest Projects
+              Some of My Projects This Semester
             </p>
+          </div>
+          <div class="project__container">
+            <div class="project fade__in__left" id="project">
+              <div>
+                <p class="project__title">Personal Portfolio</p>
+                <div class="project__image__box">
+                  <img
+                    src="./assets/individual-project.PNG"
+                    alt=""
+                    class="project__image"
+                  />
+                </div>
+              </div>
+              <div class="project__blurb">
+                <div class="project__blurb__languages">
+                  <div class="project__blurb__language">
+                    <i class="devicon-html5-plain colored"></i>
+                    <p>HTML5</p>
+                  </div>
+                  <div class="project__blurb__language">
+                    <i class="devicon-css3-plain colored"></i>
+                    <p>CSS3</p>
+                  </div>
+                  <div class="project__blurb__language">
+                    <i class="devicon-jquery-plain colored"></i>
+                    <p>jQuery</p>
+                  </div>
+                </div>
+                <div class="project__blurb__info">
+                  <p class="project__blurb__text">
+                    A project to showcase skills learned in WEBT-2300 while
+                    using JavaScript & jQuery as the only framework.
+                    Additionally, the project used modular JavaScript to mimic
+                    component-based JavaScript frameworks. It also served as a
+                    playground to test a new UI for my portfolio written in
+                    React.js & Next.js by experimenting with CSS shadow
+                    layering.
+                  </p>
+                </div>
+                <div class="project__links">
+                  <p class="project__link">
+                    <span><i class="devicon-github-original colored"></i></span
+                    ><a href="https://github.com/MatthewChildress/class-portfolio" target="_blank">Github</a>
+                  </p>
+                  <p class="project__link">
+                    <span class="material-symbols-outlined"> language </span
+                    ><a href="https://matthewchildress.github.io/class-portfolio/" target="_blank">Live Demo</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="project__two">
+              <div>
+                <p class="project__title">Group Project - Business Site</p>
+                <div class="project__image__box">
+                  <img
+                    src="./assets/group-project.PNG"
+                    alt=""
+                    class="project__image"
+                  />
+                </div>
+              </div>
+              <div class="project__blurb">
+                <div class="project__blurb__languages">
+                  <div class="project__blurb__language">
+                    <i class="devicon-html5-plain colored"></i>
+                    <p>HTML5</p>
+                  </div>
+                  <div class="project__blurb__language">
+                    <i class="devicon-css3-plain colored"></i>
+                    <p>CSS3</p>
+                  </div>
+                  <div class="project__blurb__language">
+                    <i class="devicon-jquery-plain colored"></i>
+                    <p>jQuery</p>
+                  </div>
+                </div>
+                <div class="project__blurb__info">
+                  <p class="project__blurb__text">
+                    A group project that shows fundemental skill in JavaScript & jQuery. This project 
+                    uses modular JavaScript to mimic component-based JavaScript. It performs basic CRUD operations 
+                    through replicating a shopping cart & covers core JavaScript concepts.
+                  </p>
+                </div>
+                <div class="project__links">
+                  <p class="project__link">
+                    <span><i class="devicon-github-original colored"></i></span
+                    ><a href="https://github.com/MatthewChildress/WEBT2300-Project" target="_blank">Github</a>
+                  </p>
+                  <p class="project__link">
+                    <span class="material-symbols-outlined"> language </span
+                    ><a href="https://matthewchildress.github.io/WEBT2300-Project/" target="_blank">Live Demo</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="project">
+              <div>
+                <p class="project__title">API - MVC Architectural Pattern</p>
+                <div class="project__image__box">
+                  <img
+                    src="./assets/api-project.PNG"
+                    alt=""
+                    class="project__image"
+                  />
+                </div>
+              </div>
+              <div class="project__blurb">
+                <div class="project__blurb__languages">
+                  <div class="project__blurb__language">
+                    <i class="devicon-csharp-plain colored"></i>
+                    <p>C#</p>
+                  </div>
+                  <div class="project__blurb__language">
+                    <i class="devicon-mysql-plain colored"></i>
+                    <p>MySQL</p>
+                  </div>
+                  <div class="project__blurb__language">
+                    <i class="devicon-git-plain colored"></i>
+                    <p>Git</p>
+                  </div>
+                </div>
+                <div class="project__blurb__info">
+                  <p class="project__blurb__text">
+                    A project to demonstrate basic understanding of APIs & HTTP concepts. The project 
+                    combines an API controller to a database to perform CRUD operations as long as 
+                    a user is valid. Additionally, it shows a basic comptetency with object oriented programming & 
+                    strongly typed languages.
+                  </p>
+                </div>
+                <div class="project__links">
+                  <p class="project__link">
+                    <span><i class="devicon-github-original colored"></i></span
+                    ><a href="https://github.com/MatthewChildress/mchildr3-webapi-articlejet" target="_blank">Github</a>
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
       <hr />
+      <!-- experience section -->
       <section class="experience sections" id="experience">
         <div class="section__title">
           <p>Experience</p>
         </div>
         <div class="wrapper experience__wrapper">
           <div class="section__blurb">
-            <p class="section__blurb__text">
-              Recent Relevant Employment
-            </p>
+            <p class="section__blurb__text">Recent Relevant Employment</p>
           </div>
           <div class="experience__list">
             <div class="exerpience__title accordian">
@@ -218,9 +364,18 @@
                 <p>Web Developer / Support</p>
                 <p>Aug 2022 - Current</p>
                 <ul>
-                  <li>Update code base to current WCAG 3 standards via semantic html and css</li>
-                  <li>Transition code base away from WordPress + Plugins to Next.JS, Headless CMS APIs, & GraphQL</li>
-                  <li>Optimize SEO outreach with performant code emphasizing Core Web Vitals</li>
+                  <li>
+                    Update code base to current WCAG 3 standards via semantic
+                    html and css
+                  </li>
+                  <li>
+                    Transition code base away from WordPress + Plugins to
+                    Next.JS, Headless CMS APIs, & GraphQL
+                  </li>
+                  <li>
+                    Optimize SEO outreach with performant code emphasizing Core
+                    Web Vitals
+                  </li>
                   <li>Assist with customer support and CMS maintenance</li>
                 </ul>
               </div>
@@ -233,9 +388,18 @@
                 <p>Freelance Web Developer</p>
                 <p>Apr 2022 - Current</p>
                 <ul>
-                  <li>Rapidly develop client sites with Next.js, React.js, or Vue.js alongside other technologies</li>
-                  <li>Refactor code on existing client sites to meet Core Web Vital guidelines to increase SEO visiblity</li>
-                  <li>Train part time devs to collaborate with larger projects & help build the business component library</li>
+                  <li>
+                    Rapidly develop client sites with Next.js, React.js, or
+                    Vue.js alongside other technologies
+                  </li>
+                  <li>
+                    Refactor code on existing client sites to meet Core Web
+                    Vital guidelines to increase SEO visiblity
+                  </li>
+                  <li>
+                    Train part time devs to collaborate with larger projects &
+                    help build the business component library
+                  </li>
                 </ul>
               </div>
             </div>
@@ -247,10 +411,15 @@
                 <p>Web Developer Intern</p>
                 <p>May 2022 - Jul 2022</p>
                 <ul>
-                  <li>Led development team to rewrite tool used interally for the company</li>
+                  <li>
+                    Led development team to rewrite tool used interally for the
+                    company
+                  </li>
                   <li>Wrote code using Laravel & TailwindCSS with MySQL</li>
-                  <li>Used code reviews, git, & agile development to contribute to proper CI/CD</li>
-                  
+                  <li>
+                    Used code reviews, git, & agile development to contribute to
+                    proper CI/CD
+                  </li>
                 </ul>
               </div>
             </div>
@@ -258,46 +427,55 @@
         </div>
       </section>
       <hr />
+      <!-- contact section -->
       <section class="contact sections" id="contact">
         <div class="section__title">
           <p>Contact</p>
         </div>
         <div class="wrapper contact__wrapper">
           <div class="section__blurb">
-            <p class="section__blurb__text">
-              Some Ways You Can Reach Me
-            </p>
+            <p class="section__blurb__text">Some Ways You Can Reach Me</p>
           </div>
           <div class="contact__list">
-            <div class="contact__item">
-              <span class="material-symbols-outlined"> mail </span>
-              <a href="mailto:matt.t.childress@gmail.com">Mail</a>
+            <div class="contact__item__box">
+              <div class="contact__item">
+                <span class="material-symbols-outlined"> mail </span>
+                <a href="mailto:matt.t.childress@gmail.com">Mail</a>
+              </div>
             </div>
-            <div class="contact__item">
-              <i class="devicon-linkedin-plain colored"></i>
-              <a
-                href="https://www.linkedin.com/in/matthew-childress-46406117b/"
-                target="_blank"
-                >LinkedIn</a
-              >
+            <div class="contact__item__box">
+              <div class="contact__item">
+                <i class="devicon-linkedin-plain colored"></i>
+                <a
+                  href="https://www.linkedin.com/in/matthew-childress-46406117b/"
+                  target="_blank"
+                  >LinkedIn</a
+                >
+              </div>
             </div>
-            <div class="contact__item">
-              <i class="devicon-twitter-original colored"></i>
-              <a href="https://twitter.com" target="_blank">Twitter</a>
+            <div class="contact__item__box">
+              <div class="contact__item">
+                <i class="devicon-twitter-original colored"></i>
+                <a href="https://twitter.com" target="_blank">Twitter</a>
+              </div>
             </div>
-            <div class="contact__item">
-              <i class="devicon-github-original colored"></i>
-              <a href="https://github.com/MatthewChildress" target="_blank"
-                >Github</a
-              >
+            <div class="contact__item__box">
+              <div class="contact__item">
+                <i class="devicon-github-original colored"></i>
+                <a href="https://github.com/MatthewChildress" target="_blank"
+                  >Github</a
+                >
+              </div>
             </div>
           </div>
         </div>
       </section>
+      <!-- scroll to top button-->
       <button class="scroll__button" id="scrollBtn">
         <span class="scroll__button__span">&#129137;</span>
       </button>
     </main>
+    <!-- footer -->
     <footer>
       <p>chilly.dev</p>
     </footer>

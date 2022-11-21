@@ -14,8 +14,6 @@ export const openSkills = () => {
 const titles = document.querySelectorAll('.accordian');
 titles.forEach((title) => {
     title.addEventListener('click', () => {
-
-
         title.classList.contains("is-open") ? title.classList.remove('is-open') : (activeSkills() , title.classList.add('is-open'));
     })
 })
