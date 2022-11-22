@@ -6,6 +6,7 @@ import { navSticky } from "./components/navSticky.js"
 import divFromLeft from './components/divFromLeft.js'
 import fadeMiddleDiv from './components/fadeMiddleDiv.js'
 import { contactFadeIn } from './components/contactFadeIn.js'
+import { aboutFadeIn } from './components/aboutFadeIn.js'
 
 document.getElementById('scrollBtn').addEventListener('click', scrollToTop);
 
@@ -22,3 +23,4 @@ darkMode();
 divFromLeft();
 fadeMiddleDiv();
 contactFadeIn();
+aboutFadeIn();

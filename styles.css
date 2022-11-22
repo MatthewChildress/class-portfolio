@@ -375,6 +375,56 @@ hr {
 
 /* end hero section */
 
+/* being about section*/
+
+.about__container {
+  width: 100%;
+  padding: 2em;
+  background-color: var(--accordian-bg-active);
+  color: var(--card-text);
+
+}
+
+.about__info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  opacity: 0;
+}
+
+.about__blurb {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 50%;
+  font-variant: normal;
+  padding: 1em;
+}
+
+.about__blurb__title {
+  font-size: 1.75em;  
+}
+
+.about__blurb__title > span {
+  color: var(--card-text);
+}
+
+.about__image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  
+}
+
+.about__image > img {
+  width: 20em;
+  border-radius: 50%;
+  border: 1px solid var(--text-accent);
+}
+
+/* end about section */
+
 /* begin code for each accordian section + skills */
 
 .accordian {
