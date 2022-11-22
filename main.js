@@ -8,14 +8,16 @@ import fadeMiddleDiv from './components/fadeMiddleDiv.js'
 import { contactFadeIn } from './components/contactFadeIn.js'
 import { aboutFadeIn } from './components/aboutFadeIn.js'
 
+
+
+
+
+// event listeners
 document.getElementById('scrollBtn').addEventListener('click', scrollToTop);
-
-
-
 window.onscroll = showScrollButton();
 window.onscroll = navSticky();
-/* window.addEventListener('scroll', navSticky); */
 
+// toggles
 openSkills();
 darkMode();
 
